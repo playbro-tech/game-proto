@@ -65,4 +65,7 @@ message Freespins {
 
   // Represents the event when the maximum win has been reached in the game.
   optional common.v1.MaxWin max_win = 14;
+
+  // Represents the current symbol matrix as 2-dimensional array ([reel][row])
+  optional google.protobuf.ListValue board = 10;
 }
