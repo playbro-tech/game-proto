@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.6](https://github.com/playbro-tech/game-proto/compare/v0.4.5...v0.4.6) (2026-07-31)
+
+
+### Bug Fixes
+
+* bet multiplier ([a677e6b](https://github.com/playbro-tech/game-proto/commit/a677e6b8fe5af6f417164d747a9fc227c4ed039f))
+* bet multiplier ([06192d4](https://github.com/playbro-tech/game-proto/commit/06192d46c2fdde3887f57bf7a59b9faedfb9027d))
+
 ## [0.4.5](https://github.com/playbro-tech/game-proto/compare/v0.4.4...v0.4.5) (2026-07-21)
 
 
