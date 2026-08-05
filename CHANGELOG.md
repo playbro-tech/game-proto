@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.7](https://github.com/playbro-tech/game-proto/compare/v0.4.6...v0.4.7) (2026-08-05)
+
+
+### Bug Fixes
+
+* ante_bet optional ([5f2fbc6](https://github.com/playbro-tech/game-proto/commit/5f2fbc6d9d960819677703c76a615f496169537b))
+* ante_bet optional ([b5c86a4](https://github.com/playbro-tech/game-proto/commit/b5c86a4f38b23872cc70ffe9a0b4c80d5bdc12e9))
+
 ## [0.4.6](https://github.com/playbro-tech/game-proto/compare/v0.4.5...v0.4.6) (2026-07-31)
 
 
