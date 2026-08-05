@@ -16,7 +16,7 @@ message ActionParams {
   optional int32 user_choose = 4;
 
   // ante_bet shows whether user has activated AnteBet
-  string ante_bet = 5;
+  optional string ante_bet = 5;
 }
 
 // Action represents a player's action in the game, including the name of the action and its associated parameters.
