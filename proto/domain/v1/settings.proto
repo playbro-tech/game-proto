@@ -36,4 +36,19 @@ message Settings {
 
   // buy_features is a list of purchasable features available in the game, each represented by a BuyFeature message that includes the feature's unique identifier, price, and optional name. This allows players to see and purchase additional features that can enhance their gaming experience.
   repeated common.v1.BuyFeature buy_features = 7;
+
+  // States of the collection meter and the ranges of collected symbols that activate them.
+  repeated CollectorVaultState collector_vault = 8;
+}
+
+// CollectorVaultState is one state of the collection meter; the runtime value lives in domain.v1.CollectorVault.
+message CollectorVaultState {
+  // Identifier of the state.
+  int64 state = 1;
+
+  // Lower bound of the collected amount, inclusive.
+  int64 from = 2;
+
+  // Upper bound of the collected amount, inclusive.
+  int64 to = 3;
 }

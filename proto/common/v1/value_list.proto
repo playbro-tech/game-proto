@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package common.v1;
+
+// ValueList is the money counterpart of common.v1.IdList, holding signed 64 bit amounts.
+message ValueList {
+  // Array of amounts in the smallest currency unit, one per board row.
+  repeated int64 values = 1;
+}

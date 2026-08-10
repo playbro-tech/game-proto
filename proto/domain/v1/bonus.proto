@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package domain.v1;
+
+import "common/v1/max_win.proto";
+import "common/v1/multiplier.proto";
+import "domain/v1/hold_and_win.proto";
+import "domain/v1/screen_result.proto";
+
+// Bonus is the context of a bonus round that replaces the base game rules instead of replaying them,
+// such as a hold&win respin round paid by the values collected on the board.
+message Bonus {
+  // Tier of the bonus round selected when it started.
+  optional string mode = 1;
+
+  // Bet amount the bonus round was entered with.
+  int64 round_bet = 2;
+
+  // Winnings collected on the board after the current bonus spin.
+  int64 round_win = 3;
+
+  // Current symbol layout of the bonus board.
+  optional domain.v1.ScreenResult screen_result = 4;
+
+  // Per cell multiplier values of the bonus board.
+  optional common.v1.Multipliers multipliers = 5;
+
+  // Multiplier applied to the whole bonus round.
+  optional common.v1.GlobalMultiplier global_multiplier = 6;
+
+  // Wager amount per payline of the spin that triggered the bonus round.
+  optional int64 bet_per_line = 7;
+
+  // Bonus spins remaining before the round concludes.
+  int64 rounds_left = 8;
+
+  // Bonus spins awarded in the current response.
+  int64 rounds_granted = 9;
+
+  // Bonus spins played so far in this round.
+  int64 rounds_total = 10;
+
+  // Cumulative winnings from the bonus round so far.
+  int64 total_win = 11;
+
+  // Set when the maximum win has been reached.
+  optional common.v1.MaxWin max_win = 12;
+
+  // Amounts and multipliers behind the layout reported in screen_result.
+  optional domain.v1.MoneyBoard board = 13;
+
+  // Progress of the collection meter, carried over from the base game.
+  optional domain.v1.CollectorVault collector_vault = 14;
+
+  // Boosters that can fire on a single respin; each slot has its own activation roll.
+  optional domain.v1.Booster booster_a = 15;
+
+  optional domain.v1.Booster booster_b = 16;
+
+  optional domain.v1.Booster booster_c = 17;
+
+  // Multipliers granted for completing rows or the whole board; their sum is in global_multiplier.
+  repeated domain.v1.AdditionalMultiplier additional_multipliers = 18;
+}
