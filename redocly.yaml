@@ -1,7 +1,7 @@
 extends:
-    - recommended
+  - recommended
 
 apis:
-    main:
-        # root: ./docs/openapi.yaml
-        root: ./dynamic/openapi.yaml
+  main:
+    # root: ./docs/openapi.yaml
+    root: ./dynamic/openapi.yaml

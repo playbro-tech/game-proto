@@ -1,5 +1,45 @@
 # Changelog
 
+## [0.4.7](https://github.com/playbro-tech/game-proto/compare/v0.4.6...v0.4.7) (2026-08-05)
+
+
+### Bug Fixes
+
+* ante_bet optional ([5f2fbc6](https://github.com/playbro-tech/game-proto/commit/5f2fbc6d9d960819677703c76a615f496169537b))
+* ante_bet optional ([b5c86a4](https://github.com/playbro-tech/game-proto/commit/b5c86a4f38b23872cc70ffe9a0b4c80d5bdc12e9))
+
+## [0.4.6](https://github.com/playbro-tech/game-proto/compare/v0.4.5...v0.4.6) (2026-07-31)
+
+
+### Bug Fixes
+
+* bet multiplier ([a677e6b](https://github.com/playbro-tech/game-proto/commit/a677e6b8fe5af6f417164d747a9fc227c4ed039f))
+* bet multiplier ([06192d4](https://github.com/playbro-tech/game-proto/commit/06192d46c2fdde3887f57bf7a59b9faedfb9027d))
+
+## [0.4.5](https://github.com/playbro-tech/game-proto/compare/v0.4.4...v0.4.5) (2026-07-21)
+
+
+### Bug Fixes
+
+* gift sync ([659ab00](https://github.com/playbro-tech/game-proto/commit/659ab0060d82883a90809ceec2d6f647dd1708ac))
+* gift sync ([8d3d68c](https://github.com/playbro-tech/game-proto/commit/8d3d68ca736719436a9a46e0b92e34916df29d0b))
+
+## [0.4.4](https://github.com/playbro-tech/game-proto/compare/v0.4.3...v0.4.4) (2026-07-21)
+
+
+### Bug Fixes
+
+* rename ([c57d7c6](https://github.com/playbro-tech/game-proto/commit/c57d7c6d9a86be6747535039924af710ac785334))
+* rename ([4e1342a](https://github.com/playbro-tech/game-proto/commit/4e1342acabbab9b05859867acb4105d0ce4d628e))
+
+## [0.4.3](https://github.com/playbro-games/game-proto/compare/v0.4.2...v0.4.3) (2026-07-20)
+
+
+### Bug Fixes
+
+* mode added for gift ([14b56ff](https://github.com/playbro-games/game-proto/commit/14b56ffcdb8de473e59b30989fb59e9fd7bd2c82))
+* mode added for gift ([e6fa062](https://github.com/playbro-games/game-proto/commit/e6fa0620872b7c058ca680915e874d797b67e9d9))
+
 ## [0.4.2](https://github.com/playbro-games/game-proto/compare/v0.4.1...v0.4.2) (2026-07-09)
 
 

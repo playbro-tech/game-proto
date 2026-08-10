@@ -39,4 +39,7 @@ message CurrencyFormat {
 
   // style determines the overall presentation style of the currency to match the game context. Acceptable values include: "money" (real currency formatting), "fun" (virtual/fun money formatting), or "crypto" (cryptocurrency formatting).
   string style = 2;
+
+  // bet_multiplier_exponent is an integer that defines the exponent used to calculate the bet multiplier for the currency. This value is used to determine how much a player's bet is multiplied based on the currency format and style.
+  int32 bet_multiplier_exponent = 3;
 }
