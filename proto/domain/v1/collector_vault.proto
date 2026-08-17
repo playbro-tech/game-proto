@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package domain.v1;
+
+// CollectorVaultState is one state of the collection meter; the runtime value lives in domain.v1.CollectorVault.
+message CollectorVaultState {
+  // Identifier of the state.
+  int64 state = 1;
+
+  // Lower bound of the collected amount, inclusive.
+  int64 from = 2;
+
+  // Upper bound of the collected amount, inclusive.
+  int64 to = 3;
+}

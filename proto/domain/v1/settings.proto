@@ -6,6 +6,7 @@ import "common/v1/buy_feature.proto";
 import "common/v1/buy_freespin.proto";
 import "common/v1/currency.proto";
 import "common/v1/symbol_payout.proto";
+import "domain/v1/collector_vault.proto";
 import "google/protobuf/struct.proto";
 
 // SymbolPayoutData represents the payout information for a specific symbol, including the list of payouts for different combinations of that symbol on the reels.
@@ -39,16 +40,4 @@ message Settings {
 
   // States of the collection meter and the ranges of collected symbols that activate them.
   repeated CollectorVaultState collector_vault = 8;
-}
-
-// CollectorVaultState is one state of the collection meter; the runtime value lives in domain.v1.CollectorVault.
-message CollectorVaultState {
-  // Identifier of the state.
-  int64 state = 1;
-
-  // Lower bound of the collected amount, inclusive.
-  int64 from = 2;
-
-  // Upper bound of the collected amount, inclusive.
-  int64 to = 3;
 }
