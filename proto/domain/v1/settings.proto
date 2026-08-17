@@ -6,6 +6,7 @@ import "common/v1/buy_feature.proto";
 import "common/v1/buy_freespin.proto";
 import "common/v1/currency.proto";
 import "common/v1/symbol_payout.proto";
+import "domain/v1/collector_vault.proto";
 import "google/protobuf/struct.proto";
 
 // SymbolPayoutData represents the payout information for a specific symbol, including the list of payouts for different combinations of that symbol on the reels.
@@ -36,4 +37,7 @@ message Settings {
 
   // buy_features is a list of purchasable features available in the game, each represented by a BuyFeature message that includes the feature's unique identifier, price, and optional name. This allows players to see and purchase additional features that can enhance their gaming experience.
   repeated common.v1.BuyFeature buy_features = 7;
+
+  // States of the collection meter and the ranges of collected symbols that activate them.
+  repeated CollectorVaultState collector_vault = 8;
 }

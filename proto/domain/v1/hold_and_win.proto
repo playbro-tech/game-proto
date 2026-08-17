@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package domain.v1;
+
+import "common/v1/id_list.proto";
+import "common/v1/orthogonal_position.proto";
+import "common/v1/value_list.proto";
+
+// BoosterType describes how a booster changes the hold&win board.
+enum BoosterType {
+  BOOSTER_TYPE_UNKNOWN_UNSPECIFIED = 0;
+
+  // BOOSTER_TYPE_BOOST raises the value of cells that already hold money.
+  BOOSTER_TYPE_BOOST = 1;
+
+  // BOOSTER_TYPE_SPAWN places money on previously empty cells.
+  BOOSTER_TYPE_SPAWN = 2;
+
+  // BOOSTER_TYPE_REROLL re-rolls the value of a selected group of cells.
+  BOOSTER_TYPE_REROLL = 3;
+}
+
+// MoneySymbol is one money cell of a hold&win board.
+message MoneySymbol {
+  // Board coordinate of the money symbol.
+  common.v1.OrthogonalPosition position = 1;
+
+  // Final amount carried by the cell, in the smallest currency unit.
+  int64 value = 2;
+}
+
+// MoneyBoard carries the amounts behind the symbol layout of a hold&win round.
+message MoneyBoard {
+  // Board shaped matrix of collected amounts, one entry per reel column, zero for empty cells.
+  repeated common.v1.ValueList moneys = 1;
+
+  // Board shaped matrix of bet multipliers behind moneys.
+  repeated common.v1.IdList moneys_multipliers = 2;
+
+  // Money symbols that landed during the current respin.
+  repeated MoneySymbol new_moneys = 3;
+
+  // Respins remaining before the round ends.
+  int64 round_left = 4;
+
+  // Sum of all amounts currently collected on the board.
+  int64 total_win = 5;
+}
+
+// CollectorVault is the runtime value of the collection meter; its states are declared in Settings.
+message CollectorVault {
+  // Number of money symbols accumulated so far.
+  int64 total_money = 1;
+}
+
+// RandomEvent reports that a feature started by a random roll instead of by its usual entry condition.
+message RandomEvent {
+  // Name of the action the random roll started.
+  string triggered = 1;
+
+  // Board cells that took part in the triggered feature.
+  repeated common.v1.OrthogonalPosition positions = 2;
+}
+
+// AdditionalMultiplier is a multiplier granted for completing part of the hold&win board.
+message AdditionalMultiplier {
+  // Stable name of the completion rule that granted the multiplier.
+  string trigger = 1;
+
+  // Granted multiplier.
+  int64 value = 2;
+
+  // Board cells that formed the completed shape.
+  repeated common.v1.OrthogonalPosition positions = 3;
+}
+
+// Booster is a one-shot enhancement that changes the collected values during a respin.
+message Booster {
+  // How the booster changes the board.
+  BoosterType type = 1;
+
+  // Numeric parameter of the booster, interpreted according to type.
+  int64 value = 2;
+
+  // Affected cells and the amount each carries after the booster.
+  repeated BoosterTarget targets = 3;
+}
+
+// BoosterTarget is one cell affected by a booster.
+message BoosterTarget {
+  // Board coordinate of the affected cell.
+  common.v1.OrthogonalPosition position = 1;
+
+  // Amount the cell carries after the booster, in the smallest currency unit.
+  int64 value = 2;
+}

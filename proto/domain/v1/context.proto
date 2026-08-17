@@ -3,6 +3,7 @@ syntax = "proto3";
 package domain.v1;
 
 import "common/v1/gift_spin.proto";
+import "domain/v1/bonus.proto";
 import "domain/v1/buy_feature.proto";
 import "domain/v1/freespins.proto";
 import "domain/v1/spins.proto";
@@ -35,4 +36,7 @@ message Context {
 
   // buy_feature_data stores all information in case there is a bonus game purchase mechanic in the game.
   optional BuyFeatureData buy_feature_data = 6;
+
+  // Context of a bonus round that is not a free spins session; populated when current is "bonus".
+  domain.v1.Bonus bonus = 7;
 }

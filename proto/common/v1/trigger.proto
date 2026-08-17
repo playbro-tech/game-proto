@@ -17,4 +17,8 @@ enum Trigger {
   // MAXWIN occurs when the winning limit is reached within 1 spin. Finishes the spin.
   // buf:lint:ignore ENUM_VALUE_PREFIX
   MAXWIN = 3;
+
+  // BONUS awarding a bonus round that is not a free spins session.
+  // buf:lint:ignore ENUM_VALUE_PREFIX
+  BONUS = 4;
 }
