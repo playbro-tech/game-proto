@@ -37,6 +37,6 @@ message Context {
   // buy_feature_data stores all information in case there is a bonus game purchase mechanic in the game.
   optional BuyFeatureData buy_feature_data = 6;
 
-  // Context of a bonus round that is not a free spins session; populated when current is "bonus".
+  // Context of a bonus round that is not a free spins session, populated when current is "bonus".
   domain.v1.Bonus bonus = 7;
 }
