@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0](https://github.com/playbro-tech/game-proto/compare/v0.4.7...v0.5.0) (2026-08-20)
+
+
+### Features
+
+* bonus game ([4fd8ce4](https://github.com/playbro-tech/game-proto/commit/4fd8ce47f4071ea5f7f28dd2c4871f74978438b8))
+* bonus game ([090c4ec](https://github.com/playbro-tech/game-proto/commit/090c4ec649e72b3ff887373d3f32a57ddc470a66))
+
 ## [0.4.7](https://github.com/playbro-tech/game-proto/compare/v0.4.6...v0.4.7) (2026-08-05)
 
 
