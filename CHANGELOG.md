@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.1](https://github.com/playbro-tech/game-proto/compare/v0.5.0...v0.5.1) (2026-08-25)
+
+
+### Bug Fixes
+
+* added Spins.events (crib_hustle) ([7b6fd01](https://github.com/playbro-tech/game-proto/commit/7b6fd014f109a998f9aa4f76a594d1f4796fe50f))
+* added Spins.events (crib_hustle) ([f039c67](https://github.com/playbro-tech/game-proto/commit/f039c6750bce2d5db0d3c9cc771b1980e3434d7a))
+
 ## [0.5.0](https://github.com/playbro-tech/game-proto/compare/v0.4.7...v0.5.0) (2026-08-20)
 
 
