@@ -17,6 +17,9 @@ message ActionParams {
 
   // ante_bet shows whether user has activated AnteBet
   optional string ante_bet = 5;
+
+    // cheat specifies any cheat code or special instruction applied by the player during the action, allowing the server to handle it accordingly.
+  optional string cheat = 6;
 }
 
 // Action represents a player's action in the game, including the name of the action and its associated parameters.
