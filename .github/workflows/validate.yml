@@ -1,33 +1,10 @@
-name: Validate
+name: validate
 
 on:
-    pull_request:
-
-env:
-    GITHUB_AUTH_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-    changes-check:
-        runs-on: ubuntu-latest
-        outputs:
-            src: ${{ steps.changes-check.outputs.src }}
-            deps: ${{ steps.changes-check.outputs.deps }}
-        steps:
-            - uses: actions/checkout@v4
-            - uses: dorny/paths-filter@v3
-              id: changes-check
-              with:
-                  filters: |
-                      src:
-                        - 'src/**'
-                      deps:
-                        - 'pnpm-lock.yaml'
-
-    validate:
-        needs: changes-check
-        if: ${{ needs.changes-check.outputs.src == 'true' || needs.changes-check.outputs.deps == 'true' }}
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-            - uses: ./.github/actions/install
-            - run: pnpm proto:lint
+  workflow:
+    uses: playbro-tech/ci-cd/.github/workflows/pnpm-validate.yml@v1
+    secrets: inherit

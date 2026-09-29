@@ -1,21 +1,11 @@
-name: Release
+name: release
 
 on:
   push:
     branches:
       - main
-      - 'release/**'
-
-permissions:
-  contents: write
-  pull-requests: write
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: googleapis/release-please-action@v4
-        id: release-please
-        with:
-          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
-          release-type: node
+  workflow:
+    uses: playbro-tech/ci-cd/.github/workflows/node-release.yml@v1
+    secrets: inherit

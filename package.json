@@ -20,7 +20,10 @@
 		"proto:lint": "pnpm buf lint",
 		"docs:lint": "redocly lint",
 		"docs:build": "redocly build-docs -o ./dist/docs/index.html",
-		"docs:preview": "pnpm docs:build && open ./dist/docs/index.html"
+		"docs:preview": "pnpm docs:build && open ./dist/docs/index.html",
+		"lint": "pnpm proto:lint && pnpm docs:lint",
+		"test":"pnpm lint",
+		"build":"pnpm proto:build"
 	},
 	"devDependencies": {
 		"@buf/googleapis_googleapis.bufbuild_es": "2.11.0-20250203201857-83c0f6c19b2f.1",
@@ -38,9 +41,6 @@
 	},
 	"peerDependencies": {
 		"@bufbuild/protobuf": "^2.11.0"
-	},
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
 	},
 	"packageManager": "pnpm@10.12.1"
 }

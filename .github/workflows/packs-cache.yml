@@ -1,20 +1,14 @@
-name: Packs cache update
+name: packages cache update
 
 on:
   workflow_dispatch:
   push:
     branches:
       - 'main'
-      - 'release/**'
     paths:
       - 'pnpm-lock.yaml'
 
-env:
-  GITHUB_AUTH_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
-
 jobs:
-  create-cache:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/install
+  workflow:
+    uses: playbro-tech/ci-cd/.github/workflows/pnpm-packs-cache.yml@v1
+    secrets: inherit
