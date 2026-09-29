@@ -1,6 +1,6 @@
 {
 	"name": "@playbro-tech/game-proto",
-	"version": "0.5.2",
+	"version": "0.5.3",
 	"type": "module",
 	"files": [
 		"/dist"
@@ -22,8 +22,8 @@
 		"docs:build": "redocly build-docs -o ./dist/docs/index.html",
 		"docs:preview": "pnpm docs:build && open ./dist/docs/index.html",
 		"lint": "pnpm proto:lint && pnpm docs:lint",
-		"test":"pnpm lint",
-		"build":"pnpm proto:build"
+		"test": "pnpm lint",
+		"build": "pnpm proto:build"
 	},
 	"devDependencies": {
 		"@buf/googleapis_googleapis.bufbuild_es": "2.11.0-20250203201857-83c0f6c19b2f.1",
