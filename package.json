@@ -1,6 +1,6 @@
 {
 	"name": "@playbro-tech/game-proto",
-	"version": "0.5.3",
+	"version": "0.5.4",
 	"type": "module",
 	"files": [
 		"/dist"
@@ -22,7 +22,7 @@
 		"docs:build": "redocly build-docs -o ./dist/docs/index.html",
 		"docs:preview": "pnpm docs:build && open ./dist/docs/index.html",
 		"lint": "pnpm proto:lint && pnpm docs:lint",
-		"test":"echo test",
+		"test": "echo test",
 		"build": "pnpm proto:build"
 	},
 	"devDependencies": {
