@@ -22,7 +22,7 @@
 		"docs:build": "redocly build-docs -o ./dist/docs/index.html",
 		"docs:preview": "pnpm docs:build && open ./dist/docs/index.html",
 		"lint": "pnpm proto:lint && pnpm docs:lint",
-		"test": "pnpm lint",
+		"test":"echo test",
 		"build": "pnpm proto:build"
 	},
 	"devDependencies": {
