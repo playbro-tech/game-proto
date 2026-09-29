@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.3](https://github.com/playbro-tech/game-proto/compare/v0.5.2...v0.5.3) (2026-09-29)
+
+
+### Bug Fixes
+
+* gitlab ([92a2aca](https://github.com/playbro-tech/game-proto/commit/92a2acaf8003d445c132b9c1fcf2d590e96f487a))
+* test ([23bfe6c](https://github.com/playbro-tech/game-proto/commit/23bfe6c68184b0a99dd8a317c304ffaaea475909))
+* test ([9acf2d8](https://github.com/playbro-tech/game-proto/commit/9acf2d8a28998bf45f5b7bbdaf5ccd1e54804bb9))
+* test ([83b97da](https://github.com/playbro-tech/game-proto/commit/83b97da7b714c01a93efc0ddcb0a966564d08640))
+
 ## [0.5.2](https://github.com/playbro-tech/game-proto/compare/v0.5.1...v0.5.2) (2026-09-18)
 
 
