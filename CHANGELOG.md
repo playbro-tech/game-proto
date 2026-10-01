@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.5](https://github.com/playbro-tech/game-proto/compare/v0.5.4...v0.5.5) (2026-10-01)
+
+
+### Bug Fixes
+
+* lint ([defc189](https://github.com/playbro-tech/game-proto/commit/defc189326b4d50880e344c5a4b999d0afe9a33c))
+* lint ([32f7804](https://github.com/playbro-tech/game-proto/commit/32f78040122103287e2b1c95140837fbf3ddc78c))
+* protoc ([3226c6b](https://github.com/playbro-tech/game-proto/commit/3226c6b18e81456d63eca760d7d9d5d540a9f042))
+* protoc ([99b18c6](https://github.com/playbro-tech/game-proto/commit/99b18c60591794de613ff27ff343ddf25c9f5140))
+
 ## [0.5.4](https://github.com/playbro-tech/game-proto/compare/v0.5.3...v0.5.4) (2026-09-29)
 
 
