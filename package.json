@@ -28,8 +28,8 @@
 	"devDependencies": {
 		"@buf/googleapis_googleapis.bufbuild_es": "2.11.0-20250203201857-83c0f6c19b2f.1",
 		"@bufbuild/buf": "^1.66.0",
-		"@bufbuild/protoc-gen-es": "^2.11.0",
-		"@bufbuild/protoplugin": "^2.11.0",
+		"@bufbuild/protoc-gen-es": "^2.16.0",
+		"@bufbuild/protoplugin": "^2.16.0",
 		"@redocly/cli": "^2.29.0",
 		"@types/node": "22.17.1",
 		"openapi-types": "^12.1.3",
