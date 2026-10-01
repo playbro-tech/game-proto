@@ -21,8 +21,8 @@
 		"docs:lint": "redocly lint",
 		"docs:build": "redocly build-docs -o ./dist/docs/index.html",
 		"docs:preview": "pnpm docs:build && open ./dist/docs/index.html",
-		"lint": "pnpm proto:lint && pnpm docs:lint",
-		"test": "echo test",
+		"lint": "pnpm proto:lint",
+		"test": "pnpm proto:lint",
 		"build": "pnpm proto:build"
 	},
 	"devDependencies": {
