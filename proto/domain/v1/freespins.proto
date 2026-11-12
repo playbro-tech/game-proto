@@ -8,6 +8,7 @@ import "common/v1/max_win.proto";
 import "common/v1/multiplier.proto";
 import "common/v1/windata.proto";
 import "domain/v1/cascade.proto";
+import "domain/v1/screen_result.proto";
 
 // Freespins contains the complete context of the free spins bonus game,
 // providing all information necessary for the frontend to render and display the free spins game session.
@@ -65,4 +66,8 @@ message Freespins {
 
   // Represents the event when the maximum win has been reached in the game.
   optional common.v1.MaxWin max_win = 14;
+
+  // screen_result contains the current state of the game board, including the layout of symbols on the reels and any winning combinations or scatter symbols that have appeared.
+  // This field provides the frontend with all necessary information to render the game screen accurately, including the positions of symbols, winning lines, and any special features triggered by scatter symbols.
+  optional domain.v1.ScreenResult screen_result = 15;
 }
