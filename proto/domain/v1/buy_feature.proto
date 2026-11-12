@@ -14,23 +14,23 @@ message BuyFeatureData {
 
   // type it may vary in different games depending on the documentation.
   optional BuyFeatureType type = 3;
+
+  // selected_type is the buy type a Mystery Buy resulted in, set only for BUY_FEATURE_TYPE_MYSTERY_BUY.
+  optional BuyFeatureType selected_type = 4;
 }
 
 enum BuyFeatureType {
   BUY_FEATURE_TYPE_NO_BUY_UNSPECIFIED = 0;
 
-  // Standard Buy: x100 from bet
-  // Guaranteed minimum 4 Scatters, range 4–7.
-  // The bonus field starts with closed rows.
-  // A “buy spin” is triggered with guaranteed Scatters → winnings/cascades are processed → transition to the bonus.
+  // Standard Buy: the regular bonus round of the game. Price is in settings buy_features.
   BUY_FEATURE_TYPE_STANDARD_BUY = 1;
 
-  // Super Buy: x500 from bet
-  // FS: Recommended 25.
-  // Potential: “fatter” in multipliers/events (exact parameters are configured).
+  // Super Buy: a stronger version of the bonus round, rules are defined by the game.
   BUY_FEATURE_TYPE_SUPER_BUY = 2;
 
-  // Mystery Buy: x200 from bet
-  // The player chooses 1 of 3 elements → it results in either Standard or Super (odds determined by the mathematician).
+  // Mystery Buy: results in one of the other buy types of the game, the choice is defined by the game rules.
   BUY_FEATURE_TYPE_MYSTERY_BUY = 3;
+
+  // Jackpots Buy: the bonus board gets only jackpot symbols.
+  BUY_FEATURE_TYPE_JACKPOTS_BUY = 4;
 }

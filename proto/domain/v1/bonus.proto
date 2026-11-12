@@ -19,7 +19,7 @@ message Bonus {
   // Winnings collected on the board after the current bonus spin.
   int64 round_win = 3;
 
-  // Current symbol layout of the bonus board.
+  // Current symbol layout of the bonus board, symbol id 0 marks an empty cell.
   optional domain.v1.ScreenResult screen_result = 4;
 
   // Per cell multiplier values of the bonus board.

@@ -7,7 +7,7 @@ message BuyFeature {
   // Unique identifier for the feature.
   int32 id = 1;
 
-  // Price of the feature in the smallest currency unit (e.g., cents).
+  // Price of the feature in base bets, the client multiplies it by the current bet.
   int32 price = 2;
 
   // Name of the feature.

@@ -64,7 +64,7 @@ message RandomEvent {
 
 // AdditionalMultiplier is a multiplier granted for completing part of the hold&win board.
 message AdditionalMultiplier {
-  // Stable name of the completion rule that granted the multiplier.
+  // Stable name of the completion rule that granted the multiplier, for example full_line_1, full_line_2, full_line_3 for a full row and full_board for the whole board.
   string trigger = 1;
 
   // Granted multiplier.
