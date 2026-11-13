@@ -50,8 +50,9 @@ message Freespins {
   // This value is typically non-zero only when new spins are being granted (e.g., through scatter retriggers) and should be added to the player's total spin count.
   int64 rounds_granted = 9;
 
-  // rounds_total represents the cumulative total number of free spins that have been played so far during this free spins session,
-  // allowing the frontend to track progress through the bonus round.
+  // rounds_total is the total number of free spins awarded in this session, including the initial grant and all retriggers.
+  // Playing a free spin decreases rounds_left without changing rounds_total.
+  // While the session runs normally, the number of played spins is rounds_total minus rounds_left.
   int64 rounds_total = 10;
 
   // total_win represents the cumulative total winnings from all free spins played so far in the current session, allowing the player to see their total winnings from the free spins bonus at a glance.
