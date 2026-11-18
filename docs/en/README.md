@@ -5,7 +5,7 @@ Human translation: [Русский](../ru/README.md).
 `@playbro-tech/game-proto` defines protobuf messages, enums and a service descriptor
 for game integrations. It builds an ESM library with TypeScript declarations and
 generates an OpenAPI description from annotated RPC methods. The package manifest
-declares version `0.5.6`; this reference describes the checked-out source, which
+declares version `0.6.0`; this reference describes the checked-out source, which
 can include changes beyond a published artifact. Verify the installed descriptors
 before relying on a field in a released dependency.
 
