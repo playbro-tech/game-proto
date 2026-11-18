@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/playbro-tech/game-proto/compare/v0.5.6...v0.6.0) (2026-11-18)
+
+
+### Features
+
+* **gifts:** add explicit gift mode protocol schemas ([c5c5c4c](https://github.com/playbro-tech/game-proto/commit/c5c5c4ce9e2903161f882f063e23aa8efc80a9a5))
+
 ## [0.5.6](https://github.com/playbro-tech/game-proto/compare/v0.5.5...v0.5.6) (2026-11-12)
 
 
