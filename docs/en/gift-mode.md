@@ -9,7 +9,8 @@ and mocks; they do not establish deployment or acceptance by a particular server
 
 ## Request and confirmation
 
-The request uses `command`, `session_id`, `sign_key` and `paused`:
+The request uses `command`, `session_id`, `sign_key` and `paused`. JSON examples
+use proto names; see [serialization](serialization.md) for conversion options:
 
 ```json
 {
@@ -73,9 +74,8 @@ automatic fallback from a failed `gift_mode` request.
 
 ## Generation and verification
 
-The `.proto` files own the contract. `pnpm proto:generate` regenerates TypeScript
-messages and the entry exports; generated `src`, `dynamic` and `dist` are ignored
-build outputs. `pnpm test` generates the messages, checks JSON/binary round trips,
-presence, response containers, terminal data and invalid values, then runs Buf
-lint. `pnpm build` produces the package artifact and declarations. Schema tests
-do not verify UI/FSM coordination, mock-server behavior or a live deployment.
+The `.proto` files own the contract. [Development](development.md) owns generation
+and check commands. The wire tests cover presence, response containers, terminal
+data and invalid values; they do not verify UI/FSM coordination, mock-server
+behavior or a live deployment. See the [base API](base-api.md) for surrounding
+session commands and the [schema reference](schema-reference.md) for exact fields.
