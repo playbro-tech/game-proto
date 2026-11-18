@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package api.base.v1;
+
+import "common/v1/command_type.proto";
+
+// GiftModeRequest selects gift or balance play without starting a round.
+//
+// GiftModeRequest выбирает игру на гифты или баланс без запуска раунда.
+message GiftModeRequest {
+  // command is gift_mode for this request.
+  //
+  // command содержит gift_mode для этого запроса.
+  common.v1.CommandType command = 1;
+
+  // session_id identifies the current game session.
+  //
+  // session_id определяет текущую игровую сессию.
+  string session_id = 2;
+
+  // sign_key carries the current session's signing key.
+  //
+  // sign_key содержит актуальный ключ подписи сессии.
+  string sign_key = 3;
+
+  // paused must be explicitly supplied: true selects balance play, false selects gifts.
+  // Presence distinguishes a missing intent from an explicit false value.
+  //
+  // paused передаётся явно: true выбирает баланс, false выбирает гифты.
+  // Наличие поля отличает отсутствие намерения от явного значения false.
+  optional bool paused = 4;
+}

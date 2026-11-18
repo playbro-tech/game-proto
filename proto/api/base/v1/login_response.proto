@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package api.base.v1;
 
+import "common/v1/gift_spin.proto";
 import "common/v1/user.proto";
 
 // API response for login action
@@ -11,4 +12,11 @@ message LoginResponse {
 
   // sign_key is a unique key used for signing requests, ensuring secure communication between the client and server.
   string sign_key = 2;
+
+  // gift_spin contains the available offer and its confirmed paused mode.
+  // An available offer does not itself request a round.
+  //
+  // gift_spin содержит доступный оффер и его подтверждённый режим paused.
+  // Само наличие оффера не запрашивает раунд.
+  common.v1.GiftSpin gift_spin = 3;
 }

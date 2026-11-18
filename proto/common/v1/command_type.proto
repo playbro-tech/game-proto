@@ -36,4 +36,11 @@ enum CommandType {
   // buf:lint:ignore ENUM_VALUE_UPPER_SNAKE_CASE
   ready = 5;
   // COMMAND_TYPE_READY = 5;
+
+  // gift_mode selects gift or balance play without executing a round.
+  //
+  // gift_mode выбирает игру на гифты или баланс без выполнения раунда.
+  // buf:lint:ignore ENUM_VALUE_PREFIX
+  // buf:lint:ignore ENUM_VALUE_UPPER_SNAKE_CASE
+  gift_mode = 6;
 }

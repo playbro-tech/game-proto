@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package api.base.v1;
+
+import "common/v1/gift_spin.proto";
+
+// GiftModeResponse carries the offer confirmed by a successful mode change.
+// Command correlation and error status belong to the transport envelope.
+//
+// GiftModeResponse содержит оффер, подтверждённый успешной сменой режима.
+// Корреляция команды и статус ошибки принадлежат транспортной оболочке.
+message GiftModeResponse {
+  // gift_spin contains the confirmed offer, including its paused mode.
+  //
+  // gift_spin содержит подтверждённый оффер, включая режим paused.
+  common.v1.GiftSpin gift_spin = 1;
+}

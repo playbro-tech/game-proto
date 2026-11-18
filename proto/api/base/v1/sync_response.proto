@@ -10,8 +10,10 @@ message SyncResponse {
   // user contains the details of the logged-in user, including balance and currency.
   common.v1.User user = 1;
 
-  // gift_spin contains information about any active gift spin offers provided to the player.
-  // If this field is populated, it indicates that the player has been given free spins as a promotional offer
-  // and should begin playing through those spins.
+  // gift_spin contains the offer and its confirmed paused mode.
+  // Receiving an offer does not start a round or resume gift play.
+  //
+  // gift_spin содержит оффер и его подтверждённый режим paused.
+  // Получение оффера не запускает раунд и не возобновляет игру на гифты.
   common.v1.GiftSpin gift_spin = 2;
 }

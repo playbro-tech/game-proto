@@ -2,34 +2,57 @@ syntax = "proto3";
 
 package common.v1;
 
-// GiftSpin is used to communicate promotional gift spin information to the frontend.
-// This message contains statistics about a series of free promotional spins that have been awarded to the player.
-// If this field is null or absent in the response, the player has no active gift spins.
+// GiftSpin contains promotional offer counters, lifecycle status and selected mode.
+// Availability and paused mode are separate from the funding of an accepted round.
+//
+// GiftSpin содержит счётчики промо-оффера, статус жизненного цикла и выбранный режим.
+// Доступность и режим паузы отделены от финансирования принятого раунда.
 message GiftSpin {
-  // bet represents the bet amount applied to each individual gift spin in the series.
-  // This is the amount wagered per spin during the gift spin session.
+  // bet contains the assigned gift stake in the integration's bet units.
+  //
+  // bet содержит назначенную подарочную ставку в единицах интеграции.
   int64 bet = 1;
 
-  // total_bet represents the cumulative total wagered across all gift spins in the current series.
-  // This is calculated as the individual bet amount multiplied by the number of spins played.
+  // total_bet contains the accumulated nominal stake reported for this series.
+  // It does not represent a debit from the player's main balance.
+  //
+  // total_bet содержит накопленную номинальную сумму ставок серии по данным сервера.
+  // Это не списание с основного баланса игрока.
   int64 total_bet = 2;
 
-  // total_win represents the cumulative total winnings from all gift spins in the current series, allowing the player to see their total promotional winnings at a glance.
+  // total_win contains the accumulated series win, including attributed bonuses.
+  // Its presence does not request another credit to the balance.
+  //
+  // total_win содержит накопленный выигрыш серии, включая относящиеся к ней бонусы.
+  // Наличие поля не запрашивает повторное зачисление на баланс.
   int64 total_win = 3;
 
-  // left indicates how many gift spins remain to be played before the promotional offer expires.
-  // When this value reaches zero, the gift spin feature is concluded.
+  // left counts remaining gift rounds; zero alone does not finish an ongoing bonus.
+  //
+  // left считает оставшиеся подарочные раунды; один лишь ноль не завершает текущий бонус.
   int32 left = 4;
 
-  // total indicates the total number of gift spins that were awarded in the original promotional offer.
-  // This allows the frontend to display progress through the gift spin series.
+  // total contains the granted gift-round count reported for the series.
+  //
+  // total содержит число выданных подарочных раундов серии по данным сервера.
   int32 total = 5;
 
-  // status represents the current status of the gift spin offer (e.g., "pending", "active", "completed").
-  // This field helps the frontend determine the appropriate user interface state and presentation for the gift spins feature.
+  // status contains the offer lifecycle value, including new, started, finished or deleted.
+  // It is independent of paused; a terminal response can retain final counters and win.
+  //
+  // status содержит состояние оффера, включая new, started, finished или deleted.
+  // Оно не зависит от paused; терминальный ответ может сохранять итоговые счётчики и выигрыш.
   string status = 6;
 
-  // is_previous_gift is a boolean flag indicating whether the gift spin spins are from a previous session or carry-over.
-  // This helps the frontend distinguish between newly awarded gift spins and those remaining from prior sessions.
-  bool is_previous_gift = 7;
+  // is_previous_gift is retained for legacy/debug payloads. It is not the selected-mode authority.
+  //
+  // is_previous_gift сохранён для старых/отладочных данных. Это не источник выбранного режима.
+  bool is_previous_gift = 7 [deprecated = true];
+
+  // paused confirms the selected mode: true means balance play, false means gift play.
+  // Absence leaves the mode unknown; it must not be interpreted as false.
+  //
+  // paused подтверждает выбранный режим: true означает баланс, false означает гифты.
+  // При отсутствии поля режим неизвестен; отсутствие не трактуется как false.
+  optional bool paused = 8;
 }
