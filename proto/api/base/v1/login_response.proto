@@ -3,6 +3,7 @@ syntax = "proto3";
 package api.base.v1;
 
 import "common/v1/gift_spin.proto";
+import "common/v1/replay.proto";
 import "common/v1/user.proto";
 
 // API response for login action
@@ -19,4 +20,7 @@ message LoginResponse {
   // gift_spin содержит доступный оффер и его подтверждённый режим paused.
   // Само наличие оффера не запрашивает раунд.
   common.v1.GiftSpin gift_spin = 3;
+
+  // replay is used to track a progress of the current round replay.
+  optional common.v1.ReplayRoundProgress replay = 4;
 }

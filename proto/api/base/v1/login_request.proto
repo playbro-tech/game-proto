@@ -3,6 +3,7 @@ syntax = "proto3";
 package api.base.v1;
 
 import "common/v1/command_type.proto";
+import "common/v1/replay.proto";
 
 // API request for login action
 message LoginRequest {
@@ -17,4 +18,7 @@ message LoginRequest {
 
   // language specifies the preferred language for the user interface and messages.
   string language = 4;
+
+  // replay specifies whether replay can be initiated with needed options. 
+  optional common.v1.ReplayRound replay = 5;
 }

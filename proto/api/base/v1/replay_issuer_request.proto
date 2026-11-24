@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package api.base.v1;
+
+import "common/v1/command_type.proto";
+
+// API request for replay_link action
+message ReplayIssuerRequest {
+  // command specifies the type of action being requested, which in this case is REPLAY_LINK.
+  common.v1.CommandType command = 1;
+
+  // request_id is a unique identifier for every request.
+  string request_id = 2;
+
+  // session_id is a unique identifier for the game session, which can be used for tracking and managing the session.
+  string session_id = 3;
+
+  // sign_key is a key used for signing requests, ensuring the integrity and authenticity of the requests.
+  string sign_key = 4;
+
+  // round id is an id used for generating round replay
+  string round_id = 5;
+}
