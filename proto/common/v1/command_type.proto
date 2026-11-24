@@ -43,4 +43,10 @@ enum CommandType {
   // buf:lint:ignore ENUM_VALUE_PREFIX
   // buf:lint:ignore ENUM_VALUE_UPPER_SNAKE_CASE
   gift_mode = 6;
+
+  // used to generate the replay session
+  //
+  // buf:lint:ignore ENUM_VALUE_PREFIX
+  // buf:lint:ignore ENUM_VALUE_UPPER_SNAKE_CASE
+  replay_link = 7;
 }

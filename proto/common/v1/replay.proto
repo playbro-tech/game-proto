@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package common.v1;
+
+message ReplayRound {
+  // Unique identifier of the current round.
+  string round = 1;
+}
+
+message PlayReplayRound {
+  // Unique identifier of the current round.
+  string round = 1;
+
+  // Current step number within the replay round.
+  int32 step = 2;
+}
+
+message ReplayRoundProgress {
+  // Unique identifier of the current round.
+  string round = 1;
+
+  // Current step number within the replay round.
+  int32 step = 2;
+
+  // Total number of steps in  replay round.
+  int32 steps = 3;
+
+  // Indicates whether the round has finished.
+  bool finished = 4;
+}

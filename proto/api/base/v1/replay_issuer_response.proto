@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package api.base.v1;
+
+import "common/v1/gift_spin.proto";
+import "common/v1/user.proto";
+
+// API response for replay_link action
+message ReplayIssuerResponse {
+  // replay_url is an url needed for user to be opened.
+  string replay_url = 1;
+}
